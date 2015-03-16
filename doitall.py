@@ -34,7 +34,13 @@ with open('dw.json') as f:
     searchList = json.load(f, object_hook=_decode_dict)
 
 with open('createDB.tmpl') as f:
-    templateDef = f.read()
+    sqltmpl = f.read()
 
-doitallscript = Template(templateDef, searchList)
-print(doitallscript)
+with open('datadict.tmpl') as f:
+    datadicttmpl = f.read()
+
+sqlscript = Template(sqltmpl, searchList)
+print(sqlscript)
+
+datadict = Template(datadicttmpl, searchList)
+print(datadict)

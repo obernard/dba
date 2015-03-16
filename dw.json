@@ -5,8 +5,18 @@
          "columns": [
             {"name": "SomeColumnName",
              "type": "int",
-             "nullable": true}
+             "nullable": true},
+            {"name": "SomeOtherColumn",
+             "type": "int",
+             "nullable": false}
          ]
+        },
+        {"name": "Dim1",
+         "columns": [
+         {"name": "YetAnotherColumn",
+          "type": "nvarchar(4)",
+          "nullable": true}
+        ]
         }
     ]
 }

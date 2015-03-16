@@ -1,0 +1,7 @@
+name;code;type;comment;
+#for $table in $tables
+${table.name}Key;;int;;
+    #for $column in $table.columns
+$column.name;;$column.type;;
+    #end for
+#end for

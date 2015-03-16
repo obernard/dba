@@ -12,7 +12,7 @@ go
 
 #for $table in $tables
 create table $table.name
-    { ${table.name}Key int
+    {${table.name}Key int
     #for $column in $table.columns
     #if $column.nullable
     ,$column.name $column.type NULL
@@ -21,4 +21,6 @@ create table $table.name
     #end if
     #end for
     }
+GO
+
 #end for
