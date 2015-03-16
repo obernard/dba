@@ -1,0 +1,24 @@
+CREATE DATABASE [$dbname] 
+GO
+ALTER DATABASE $dbname MODIFY FILE 
+( NAME = N'$dbname' , SIZE = 3048KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB )
+GO
+ALTER DATABASE $dbname MODIFY FILE 
+( NAME = N'${dbname}_log' , SIZE = 1024KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
+GO
+
+use [$dbname]
+go
+
+#for $table in $tables
+create table $table.name
+    { ${table.name}Key int
+    #for $column in $table.columns
+    #if $column.nullable
+    ,$column.name $column.type NULL
+    #else
+    ,$column.name $column.type NOT NULL
+    #end if
+    #end for
+    }
+#end for

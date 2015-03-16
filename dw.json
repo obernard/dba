@@ -1,0 +1,12 @@
+{
+    "dbname": "DW",
+    "tables": [
+        {"name": "Fact1",
+         "columns": [
+            {"name": "SomeColumnName",
+             "type": "int",
+             "nullable": true}
+         ]
+        }
+    ]
+}
